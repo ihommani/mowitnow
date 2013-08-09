@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="11" passed="11">
+<testng-results skipped="0" failed="0" total="9" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="Command line suite" duration-ms="39" started-at="2013-08-09T00:27:05Z" finished-at="2013-08-09T00:27:05Z">
+  <suite name="Command line suite" duration-ms="17" started-at="2013-08-09T21:38:58Z" finished-at="2013-08-09T21:38:58Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="39" started-at="2013-08-09T00:27:05Z" finished-at="2013-08-09T00:27:05Z">
+    <test name="Command line test" duration-ms="17" started-at="2013-08-09T21:38:58Z" finished-at="2013-08-09T21:38:58Z">
       <class name="mowitnow.FieldTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:mowitnow.FieldTest@2b53d2f3]" name="setUp" is-config="true" duration-ms="12" started-at="2013-08-09T00:27:05Z" finished-at="2013-08-09T00:27:05Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:mowitnow.FieldTest@77383942]" name="setUp" is-config="true" duration-ms="6" started-at="2013-08-09T21:38:58Z" finished-at="2013-08-09T21:38:58Z">
         </test-method>
-        <test-method status="PASS" signature="should_tell_if_inside_the_field(int, int, boolean)[pri:0, instance:mowitnow.FieldTest@2b53d2f3]" name="should_tell_if_inside_the_field" duration-ms="3" started-at="2013-08-09T00:27:05Z" finished-at="2013-08-09T00:27:05Z">
+        <test-method status="PASS" signature="should_tell_if_inside_the_field(int, int, boolean)[pri:0, instance:mowitnow.FieldTest@77383942]" name="should_tell_if_inside_the_field" duration-ms="2" started-at="2013-08-09T21:38:58Z" finished-at="2013-08-09T21:38:58Z">
           <params>
             <param index="0">
               <value>
@@ -28,45 +28,7 @@
             </param>
           </params>
         </test-method>
-        <test-method status="PASS" signature="should_tell_if_inside_the_field(int, int, boolean)[pri:0, instance:mowitnow.FieldTest@2b53d2f3]" name="should_tell_if_inside_the_field" duration-ms="0" started-at="2013-08-09T00:27:05Z" finished-at="2013-08-09T00:27:05Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[-1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[false]]>
-              </value>
-            </param>
-          </params>
-        </test-method>
-        <test-method status="PASS" signature="should_tell_if_inside_the_field(int, int, boolean)[pri:0, instance:mowitnow.FieldTest@2b53d2f3]" name="should_tell_if_inside_the_field" duration-ms="1" started-at="2013-08-09T00:27:05Z" finished-at="2013-08-09T00:27:05Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[-1]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[false]]>
-              </value>
-            </param>
-          </params>
-        </test-method>
-        <test-method status="PASS" signature="should_tell_if_inside_the_field(int, int, boolean)[pri:0, instance:mowitnow.FieldTest@2b53d2f3]" name="should_tell_if_inside_the_field" duration-ms="1" started-at="2013-08-09T00:27:05Z" finished-at="2013-08-09T00:27:05Z">
+        <test-method status="PASS" signature="should_tell_if_inside_the_field(int, int, boolean)[pri:0, instance:mowitnow.FieldTest@77383942]" name="should_tell_if_inside_the_field" duration-ms="1" started-at="2013-08-09T21:38:58Z" finished-at="2013-08-09T21:38:58Z">
           <params>
             <param index="0">
               <value>
@@ -85,7 +47,64 @@
             </param>
           </params>
         </test-method>
-        <test-method status="PASS" signature="should_tell_if_inside_the_field(int, int, boolean)[pri:0, instance:mowitnow.FieldTest@2b53d2f3]" name="should_tell_if_inside_the_field" duration-ms="0" started-at="2013-08-09T00:27:05Z" finished-at="2013-08-09T00:27:05Z">
+        <test-method status="PASS" signature="should_tell_if_inside_the_field(int, int, boolean)[pri:0, instance:mowitnow.FieldTest@77383942]" name="should_tell_if_inside_the_field" duration-ms="0" started-at="2013-08-09T21:38:58Z" finished-at="2013-08-09T21:38:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[-1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="should_tell_if_inside_the_field(int, int, boolean)[pri:0, instance:mowitnow.FieldTest@77383942]" name="should_tell_if_inside_the_field" duration-ms="0" started-at="2013-08-09T21:38:58Z" finished-at="2013-08-09T21:38:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[-1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="should_tell_if_inside_the_field(int, int, boolean)[pri:0, instance:mowitnow.FieldTest@77383942]" name="should_tell_if_inside_the_field" duration-ms="0" started-at="2013-08-09T21:38:58Z" finished-at="2013-08-09T21:38:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="should_tell_if_inside_the_field(int, int, boolean)[pri:0, instance:mowitnow.FieldTest@77383942]" name="should_tell_if_inside_the_field" duration-ms="0" started-at="2013-08-09T21:38:58Z" finished-at="2013-08-09T21:38:58Z">
           <params>
             <param index="0">
               <value>
@@ -104,45 +123,7 @@
             </param>
           </params>
         </test-method>
-        <test-method status="PASS" signature="should_tell_if_inside_the_field(int, int, boolean)[pri:0, instance:mowitnow.FieldTest@2b53d2f3]" name="should_tell_if_inside_the_field" duration-ms="0" started-at="2013-08-09T00:27:05Z" finished-at="2013-08-09T00:27:05Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-        </test-method>
-        <test-method status="PASS" signature="should_tell_if_inside_the_field(int, int, boolean)[pri:0, instance:mowitnow.FieldTest@2b53d2f3]" name="should_tell_if_inside_the_field" duration-ms="1" started-at="2013-08-09T00:27:05Z" finished-at="2013-08-09T00:27:05Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[6]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[false]]>
-              </value>
-            </param>
-          </params>
-        </test-method>
-        <test-method status="PASS" signature="should_tell_if_inside_the_field(int, int, boolean)[pri:0, instance:mowitnow.FieldTest@2b53d2f3]" name="should_tell_if_inside_the_field" duration-ms="0" started-at="2013-08-09T00:27:05Z" finished-at="2013-08-09T00:27:05Z">
+        <test-method status="PASS" signature="should_tell_if_inside_the_field(int, int, boolean)[pri:0, instance:mowitnow.FieldTest@77383942]" name="should_tell_if_inside_the_field" duration-ms="0" started-at="2013-08-09T21:38:58Z" finished-at="2013-08-09T21:38:58Z">
           <params>
             <param index="0">
               <value>
@@ -161,7 +142,26 @@
             </param>
           </params>
         </test-method>
-        <test-method status="PASS" signature="should_tell_if_inside_the_field(int, int, boolean)[pri:0, instance:mowitnow.FieldTest@2b53d2f3]" name="should_tell_if_inside_the_field" duration-ms="0" started-at="2013-08-09T00:27:05Z" finished-at="2013-08-09T00:27:05Z">
+        <test-method status="PASS" signature="should_tell_if_inside_the_field(int, int, boolean)[pri:0, instance:mowitnow.FieldTest@77383942]" name="should_tell_if_inside_the_field" duration-ms="0" started-at="2013-08-09T21:38:58Z" finished-at="2013-08-09T21:38:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="should_tell_if_inside_the_field(int, int, boolean)[pri:0, instance:mowitnow.FieldTest@77383942]" name="should_tell_if_inside_the_field" duration-ms="0" started-at="2013-08-09T21:38:58Z" finished-at="2013-08-09T21:38:58Z">
           <params>
             <param index="0">
               <value>
@@ -179,12 +179,6 @@
               </value>
             </param>
           </params>
-        </test-method>
-      </class>
-      <class name="mowitnow.TondeuseTest">
-        <test-method status="PASS" signature="should_only_move_inside_the_field()[pri:0, instance:mowitnow.TondeuseTest@c3e65be]" name="should_only_move_inside_the_field" duration-ms="0" started-at="2013-08-09T00:27:05Z" finished-at="2013-08-09T00:27:05Z">
-        </test-method>
-        <test-method status="PASS" signature="toto()[pri:0, instance:mowitnow.TondeuseTest@c3e65be]" name="toto" duration-ms="1" started-at="2013-08-09T00:27:05Z" finished-at="2013-08-09T00:27:05Z">
         </test-method>
       </class>
     </test>

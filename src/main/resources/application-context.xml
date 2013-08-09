@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="mowitnow.properties" />
+
+    <bean id="field" class="mowitnow.Field">
+        <constructor-arg type="int" value="${upper.x}" />
+        <constructor-arg type="int" value="${upper.y}" />
+    </bean>
+
+    <bean id="map" class="mowitnow.CardinalWithMovement">
+        <property name="map">
+            <map>
+                <entry key="N">
+                    <map>
+                        <entry key="A" value="N" />
+                        <entry key="D" value="E" />
+                        <entry key="G" value="W" />
+                    </map>
+                </entry>
+                <entry key="E">
+                    <map>
+                        <entry key="A" value="E" />
+                        <entry key="D" value="S" />
+                        <entry key="G" value="N" />
+                    </map>
+                </entry>
+                <entry key="W">
+                    <map>
+                        <entry key="A" value="W" />
+                        <entry key="D" value="N" />
+                        <entry key="G" value="S" />
+                    </map>
+                </entry>
+                <entry key="S">
+                    <map>
+                        <entry key="A" value="S" />
+                        <entry key="D" value="W" />
+                        <entry key="G" value="E" />
+                    </map>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+</beans>

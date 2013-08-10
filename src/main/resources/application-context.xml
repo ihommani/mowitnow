@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-           http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-    <import resource="mowitnow.properties" />
-
+         xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                        http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/context 
+                        http://www.springframework.org/schema/context/spring-context.xsd">
+        
+    
+        
+    <bean id="tondeuse1" class="mowitnow.Tondeuse">
+    	 <constructor-arg index="0" type="int" value="1" />
+        <constructor-arg index="1" type="int" value="2" />
+        <constructor-arg index="2" value="N" />
+        <property name="field" ref="field" />
+        <property name="cardinalWithMovement" ref="map" />
+    </bean>
+    
+    <bean id="tondeuse2" class="mowitnow.Tondeuse">
+    	<constructor-arg index="0" type="int" value="3" />
+        <constructor-arg index="1" type="int" value="3" />
+        <constructor-arg index="2" value="E" />
+         <property name="field" ref="field" />
+        <property name="cardinalWithMovement" ref="map" />
+    </bean>
+                        
     <bean id="field" class="mowitnow.Field">
-        <constructor-arg type="int" value="${upper.x}" />
-        <constructor-arg type="int" value="${upper.y}" />
+        <constructor-arg index="0" type="int" value="5" />
+        <constructor-arg index="1" type="int" value="5" />
     </bean>
 
     <bean id="map" class="mowitnow.CardinalWithMovement">

@@ -2,20 +2,25 @@ package mowitnow;
 
 import java.util.Map;
 
+import javax.annotation.Resource;
+
 import mowitnow.enums.CardinalPoint;
 import mowitnow.enums.Movement;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * Classe représentant une tondeuse
  */
+@Component
 public class Tondeuse {
 
 
-    @Autowired
+    @Resource
     private Field field;
 
-    @Autowired
+    @Resource
     private CardinalWithMovement cardinalWithMovement;
 
     public Tondeuse(int x, int y, CardinalPoint direction) {
@@ -34,7 +39,6 @@ public class Tondeuse {
      */
     private int y;
     private CardinalPoint direction;
-    private Map<CardinalPoint, Map<Movement, CardinalPoint>> map;
 
     /**
      * Permet de mettre à jour la position de la tondeuse
@@ -109,6 +113,7 @@ public class Tondeuse {
             return;
         }
 
+        Map<CardinalPoint, Map<Movement, CardinalPoint>> map = cardinalWithMovement.getMap();
         switch (movement) {
             case A:
                 this.updatePosition(map.get(this.direction).get(Movement.A));
@@ -166,10 +171,6 @@ public class Tondeuse {
 
     public void setCardinalWithMovement(CardinalWithMovement cardinalWithMovement) {
         this.cardinalWithMovement = cardinalWithMovement;
-    }
-
-    public void setMap(Map<CardinalPoint, Map<Movement, CardinalPoint>> map) {
-        this.map = map;
     }
 
 

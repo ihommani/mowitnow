@@ -57,24 +57,29 @@ public class Tondeuse {
             case N:
                 if (field.isWithinBoundaries(this.x, this.y + 1)) {
                     this.y++;
+                    LOGGER.debug("Moving to north");
                 }
                 break;
             case E:
                 if (field.isWithinBoundaries(this.x + 1, this.y)) {
                     this.x++;
+                    LOGGER.debug("Moving to east");
                 }
                 break;
             case W:
                 if (field.isWithinBoundaries(this.x - 1, this.y)) {
                     this.x--;
+                    LOGGER.debug("Moving to west");
                 }
                 break;
             case S:
                 if (field.isWithinBoundaries(this.x, this.y - 1)) {
                     this.y--;
+                    LOGGER.debug("Moving to south");
                 }
                 break;
             default:
+            	LOGGER.debug("Not moving");
                 ;
         }
     }
@@ -86,24 +91,20 @@ public class Tondeuse {
 
         switch (direction) {
             case N:
-                if (field.isWithinBoundaries(this.x, this.y + 1)) {
-                    this.y++;
-                }
+                    this.direction = CardinalPoint.N;
+                    LOGGER.debug("Orienting to north");
                 break;
             case E:
-                if (field.isWithinBoundaries(this.x + 1, this.y)) {
-                    this.x++;
-                }
+            	this.direction = CardinalPoint.E;
+            	LOGGER.debug("Orienting to east");
                 break;
             case W:
-                if (field.isWithinBoundaries(this.x - 1, this.y)) {
-                    this.x--;
-                }
+            	this.direction = CardinalPoint.W;
+            	LOGGER.debug("Orienting to west");
                 break;
             case S:
-                if (field.isWithinBoundaries(this.x, this.y - 1)) {
-                    this.y--;
-                }
+            	this.direction = CardinalPoint.S;
+            	LOGGER.debug("Orienting to south");
                 break;
             default:
                 ;

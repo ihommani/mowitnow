@@ -3,4 +3,5 @@
 .settings
 target/**/*
 *.html
+*.log
 *.class

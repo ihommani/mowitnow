@@ -31,6 +31,7 @@ public class Main {
 		
 		if(directivesFile.exists()){
 	        List<Tondeuse> tondeuses = Lists.newArrayList((Tondeuse) context.getBean("tondeuse1"), (Tondeuse) context.getBean("tondeuse2"));
+	        
 	        FileReader directives = new FileReader(directivesFile.getFile());
 	        BufferedReader br = new BufferedReader(directives);
 	        
@@ -41,7 +42,7 @@ public class Main {
 	        	for(char c: line.toCharArray()){
 	        		currentTondeuse.move(Movement.valueOf(Character.toString(c)));
 	        	}
-	        	currentTondeuse.finalPosition();
+	        	currentTondeuse.finalPosition(); // Print the final position
 	        	currentTondeuse = null; // Small pimp, for we do not need the mower anymore.
 	        	lastIndex++;
 	        }

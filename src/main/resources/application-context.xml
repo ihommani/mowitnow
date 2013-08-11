@@ -6,27 +6,29 @@
                         http://www.springframework.org/schema/context 
                         http://www.springframework.org/schema/context/spring-context.xsd">
         
-    
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+  		<property name="locations" value="classpath:mowitnow.properties"/>
+	</bean>
         
     <bean id="tondeuse1" class="mowitnow.Tondeuse">
-    	 <constructor-arg index="0" type="int" value="1" />
-        <constructor-arg index="1" type="int" value="2" />
+    	 <constructor-arg index="0" type="int" value="${tondeuse1.starting.x}" />
+        <constructor-arg index="1" type="int" value="${tondeuse1.starting.y}" />
         <constructor-arg index="2" value="N" />
         <property name="field" ref="field" />
         <property name="cardinalWithMovement" ref="map" />
     </bean>
     
     <bean id="tondeuse2" class="mowitnow.Tondeuse">
-    	<constructor-arg index="0" type="int" value="3" />
-        <constructor-arg index="1" type="int" value="3" />
+    	<constructor-arg index="0" type="int" value="${tondeuse2.starting.x}" />
+        <constructor-arg index="1" type="int" value="${tondeuse2.starting.y}" />
         <constructor-arg index="2" value="E" />
          <property name="field" ref="field" />
         <property name="cardinalWithMovement" ref="map" />
     </bean>
                         
     <bean id="field" class="mowitnow.Field">
-        <constructor-arg index="0" type="int" value="5" />
-        <constructor-arg index="1" type="int" value="5" />
+        <constructor-arg index="0" type="int" value="${field.upper.x}" />
+        <constructor-arg index="1" type="int" value="${field.upper.y}" />
     </bean>
 
     <bean id="map" class="mowitnow.CardinalWithMovement">

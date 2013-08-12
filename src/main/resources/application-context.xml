@@ -9,7 +9,7 @@
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
   		<property name="locations" value="classpath:mowitnow.properties"/>
 	</bean>
-        
+	
     <bean id="tondeuse1" class="mowitnow.Tondeuse">
     	 <constructor-arg index="0" type="int" value="${tondeuse1.starting.x}" />
         <constructor-arg index="1" type="int" value="${tondeuse1.starting.y}" />

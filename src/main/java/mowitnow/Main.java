@@ -5,12 +5,18 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
+
 import com.google.common.collect.Lists;
 
 import mowitnow.enums.Movement;
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 
 /**
  * Main routine from mowitnow package.
@@ -20,12 +26,14 @@ import org.springframework.core.io.Resource;
  */
 public class Main {
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        ApplicationContext context = new ClassPathXmlApplicationContext("application-context.xml");
-
-        Resource directivesFile = context.getResource("directives.txt");
-
+    	
+    	ApplicationContext appContext = new ClassPathXmlApplicationContext("application-context.xml");
+    	
+    	DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory (appContext);
+    	Resource directivesFile = appContext.getResource("directives.txt");
+        
         if (directivesFile.exists()) {
-            List<Tondeuse> tondeuses = Lists.newArrayList((Tondeuse) context.getBean("tondeuse1"), (Tondeuse) context.getBean("tondeuse2"));
+            List<Tondeuse> tondeuses = Lists.newArrayList((Tondeuse) beanFactory.getBean("tondeuse1"), (Tondeuse) beanFactory.getBean("tondeuse2"));
 
             FileReader directives = new FileReader(directivesFile.getFile());
             BufferedReader br = new BufferedReader(directives);

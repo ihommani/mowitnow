@@ -1,15 +1,12 @@
 package mowitnow;
 
 import java.util.Map;
-
 import javax.annotation.Resource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import mowitnow.enums.CardinalPoint;
 import mowitnow.enums.Movement;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -18,8 +15,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class Tondeuse {
 
-	private static Logger LOGGER = LoggerFactory.getLogger(Tondeuse.class); 
-	
+    private static Logger LOGGER = LoggerFactory.getLogger(Tondeuse.class);
+
     @Resource
     private Field field;
 
@@ -79,7 +76,7 @@ public class Tondeuse {
                 }
                 break;
             default:
-            	LOGGER.debug("Not moving");
+                LOGGER.debug("Not moving");
                 ;
         }
     }
@@ -91,20 +88,20 @@ public class Tondeuse {
 
         switch (direction) {
             case N:
-                    this.direction = CardinalPoint.N;
-                    LOGGER.debug("Orienting to north");
+                this.direction = CardinalPoint.N;
+                LOGGER.debug("Orienting to north");
                 break;
             case E:
-            	this.direction = CardinalPoint.E;
-            	LOGGER.debug("Orienting to east");
+                this.direction = CardinalPoint.E;
+                LOGGER.debug("Orienting to east");
                 break;
             case W:
-            	this.direction = CardinalPoint.W;
-            	LOGGER.debug("Orienting to west");
+                this.direction = CardinalPoint.W;
+                LOGGER.debug("Orienting to west");
                 break;
             case S:
-            	this.direction = CardinalPoint.S;
-            	LOGGER.debug("Orienting to south");
+                this.direction = CardinalPoint.S;
+                LOGGER.debug("Orienting to south");
                 break;
             default:
                 ;

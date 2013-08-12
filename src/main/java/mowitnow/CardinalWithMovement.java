@@ -21,8 +21,8 @@ public class CardinalWithMovement {
     public void setMap(Map<CardinalPoint, Map<Movement, CardinalPoint>> map) {
         this.map = map;
     }
-    
-    public Map<CardinalPoint, Map<Movement, CardinalPoint>> getMap(){
-    	return this.map;
+
+    public Map<CardinalPoint, Map<Movement, CardinalPoint>> getMap() {
+        return this.map;
     }
 }

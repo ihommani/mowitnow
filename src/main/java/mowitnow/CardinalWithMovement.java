@@ -8,7 +8,7 @@ import mowitnow.enums.CardinalPoint;
 import mowitnow.enums.Movement;
 
 /**
- * CardinalWithMovement -
+ * CardinalWithMovement - Map associant un point cardinal avec 
  *
  * @author ihommani
  * @version $Id: File Header.java 143213 09/08/13 21:05

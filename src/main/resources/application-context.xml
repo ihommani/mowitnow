@@ -1,69 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
                         http://www.springframework.org/schema/beans/spring-beans.xsd
                         http://www.springframework.org/schema/context 
                         http://www.springframework.org/schema/context/spring-context.xsd">
-        
-    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-  		<property name="locations" value="classpath:mowitnow.properties"/>
-	</bean>
-	
-    <bean id="tondeuse1" class="mowitnow.Tondeuse">
-    	 <constructor-arg index="0" type="int" value="${tondeuse1.starting.x}" />
-        <constructor-arg index="1" type="int" value="${tondeuse1.starting.y}" />
-        <constructor-arg index="2" value="N" />
-        <property name="field" ref="field" />
-        <property name="cardinalWithMovement" ref="map" />
-    </bean>
-    
-    <bean id="tondeuse2" class="mowitnow.Tondeuse">
-    	<constructor-arg index="0" type="int" value="${tondeuse2.starting.x}" />
-        <constructor-arg index="1" type="int" value="${tondeuse2.starting.y}" />
-        <constructor-arg index="2" value="E" />
-         <property name="field" ref="field" />
-        <property name="cardinalWithMovement" ref="map" />
-    </bean>
-                        
-    <bean id="field" class="mowitnow.Field">
-        <constructor-arg index="0" type="int" value="${field.upper.x}" />
-        <constructor-arg index="1" type="int" value="${field.upper.y}" />
-    </bean>
 
-    <bean id="map" class="mowitnow.CardinalWithMovement">
-        <property name="map">
-            <map>
-                <entry key="N">
-                    <map>
-                        <entry key="A" value="N" />
-                        <entry key="D" value="E" />
-                        <entry key="G" value="W" />
-                    </map>
-                </entry>
-                <entry key="E">
-                    <map>
-                        <entry key="A" value="E" />
-                        <entry key="D" value="S" />
-                        <entry key="G" value="N" />
-                    </map>
-                </entry>
-                <entry key="W">
-                    <map>
-                        <entry key="A" value="W" />
-                        <entry key="D" value="N" />
-                        <entry key="G" value="S" />
-                    </map>
-                </entry>
-                <entry key="S">
-                    <map>
-                        <entry key="A" value="S" />
-                        <entry key="D" value="W" />
-                        <entry key="G" value="E" />
-                    </map>
-                </entry>
-            </map>
-        </property>
-    </bean>
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" value="classpath:mowitnow.properties" />
+	</bean>
+
+	<bean id="tondeuse1" class="mowitnow.Tondeuse">
+		<constructor-arg index="0" type="int"
+			value="${tondeuse1.starting.x}" />
+		<constructor-arg index="1" type="int"
+			value="${tondeuse1.starting.y}" />
+		<constructor-arg index="2" value="N" />
+		<property name="field" ref="field" />
+		<property name="cardinalWithMovement" ref="map" />
+	</bean>
+
+	<bean id="tondeuse2" class="mowitnow.Tondeuse">
+		<constructor-arg index="0" type="int"
+			value="${tondeuse2.starting.x}" />
+		<constructor-arg index="1" type="int"
+			value="${tondeuse2.starting.y}" />
+		<constructor-arg index="2" value="E" />
+		<property name="field" ref="field" />
+		<property name="cardinalWithMovement" ref="map" />
+	</bean>
+
+	<bean id="field" class="mowitnow.Field">
+		<constructor-arg index="0" type="int" value="${field.upper.x}" />
+		<constructor-arg index="1" type="int" value="${field.upper.y}" />
+	</bean>
+
+	<bean id="map" class="mowitnow.CardinalWithMovement">
+		<property name="map">
+			<map>
+				<entry key="N">
+					<map>
+						<entry key="A" value="N" />
+						<entry key="D" value="E" />
+						<entry key="G" value="W" />
+					</map>
+				</entry>
+				<entry key="E">
+					<map>
+						<entry key="A" value="E" />
+						<entry key="D" value="S" />
+						<entry key="G" value="N" />
+					</map>
+				</entry>
+				<entry key="W">
+					<map>
+						<entry key="A" value="W" />
+						<entry key="D" value="N" />
+						<entry key="G" value="S" />
+					</map>
+				</entry>
+				<entry key="S">
+					<map>
+						<entry key="A" value="S" />
+						<entry key="D" value="W" />
+						<entry key="G" value="E" />
+					</map>
+				</entry>
+			</map>
+		</property>
+	</bean>
 
 </beans>

@@ -19,37 +19,42 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 
 /**
- * Main routine from mowitnow package.
- * Initiate a field and two mowers to mow the field
- *
+ * Main routine from mowitnow package. Initiate a field and two mowers to mow
+ * the field
+ * 
  * @author ihommani
  */
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException, IOException {
-    	
-    	ApplicationContext appContext = new ClassPathXmlApplicationContext("application-context.xml");
-    	
-    	DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory (appContext);
-    	Resource directivesFile = appContext.getResource("directives.txt");
-        
-        if (directivesFile.exists()) {
-            List<Tondeuse> tondeuses = Lists.newArrayList((Tondeuse) beanFactory.getBean("tondeuse1"), (Tondeuse) beanFactory.getBean("tondeuse2"));
+	public static void main(String[] args) throws FileNotFoundException,
+			IOException {
 
-            FileReader directives = new FileReader(directivesFile.getFile());
-            BufferedReader br = new BufferedReader(directives);
+		ApplicationContext appContext = new ClassPathXmlApplicationContext("application-context.xml");
 
-            String line;
-            int lastIndex = 0;
-            while ((line = br.readLine()) != null) {
-                Tondeuse currentTondeuse = tondeuses.get(lastIndex);
-                for (char c : line.toCharArray()) {
-                    currentTondeuse.move(Movement.valueOf(Character.toString(c)));
-                }
-                currentTondeuse.finalPosition(); // Print the final position
-                currentTondeuse = null; // Small pimp, for we do not need the mower anymore.
-                lastIndex++;
-            }
-            br.close();
-        }
-    }
+		DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory(appContext);
+		Resource directivesFile = appContext.getResource("directives.txt");
+
+		if (directivesFile.exists()) {
+			List<Tondeuse> tondeuses = Lists.newArrayList(
+					(Tondeuse) beanFactory.getBean("tondeuse1"),
+					(Tondeuse) beanFactory.getBean("tondeuse2"));
+
+			FileReader directives = new FileReader(directivesFile.getFile());
+			BufferedReader br = new BufferedReader(directives);
+
+			String line;
+			int lastIndex = 0;
+			while ((line = br.readLine()) != null) {
+				Tondeuse currentTondeuse = tondeuses.get(lastIndex);
+				for (char c : line.toCharArray()) {
+					currentTondeuse
+							.move(Movement.valueOf(Character.toString(c)));
+				}
+				currentTondeuse.finalPosition(); // Print the final position
+				currentTondeuse = null; // Small pimp, for we do not need the
+										// mower anymore.
+				lastIndex++;
+			}
+			br.close();
+		}
+	}
 }

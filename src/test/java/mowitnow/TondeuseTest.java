@@ -1,25 +1,25 @@
 package mowitnow;
 
 
+import java.util.Map;
+
+import com.google.common.collect.Maps;
+
 import mowitnow.enums.CardinalPoint;
+import mowitnow.enums.Movement;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.when;
-
 public class TondeuseTest {
 
     private final int X_POSITION = 0;
     private final int Y_POSITION = 0;
-
-    @Mock
-    Field field;
 
     @Mock
     CardinalWithMovement cardinalWithMovement;
@@ -34,43 +34,33 @@ public class TondeuseTest {
 
     @Test
     public void should_not_move_when_giving_null_argument() {
-        tondeuse.updatePosition(null);
+        tondeuse.move(null);
         Assert.assertEquals(tondeuse.getX(), X_POSITION);
         Assert.assertEquals(tondeuse.getY(), Y_POSITION);
     }
 
     @Test(dataProvider = "movements")
-    public void should_not_move(CardinalPoint cp) {
-        // when ...
-        when(field.isWithinBoundaries(any(int.class), any(int.class))).thenReturn(false);
-        tondeuse.updatePosition(cp);
+    public void should_move_according_direction(Movement movement, CardinalPoint expectedDirection) {
+        Map<CardinalPoint, Map<Movement, CardinalPoint>> map = Maps.newHashMap();
+        Map<Movement, CardinalPoint> mc = Maps.newHashMap();
+        mc.put(Movement.A, CardinalPoint.N);
+        mc.put(Movement.D, CardinalPoint.E);
+        mc.put(Movement.G, CardinalPoint.W);
+        tondeuse.setField(new Field(X_POSITION, Y_POSITION));
+        map.put(CardinalPoint.N, mc);
+        Mockito.when(cardinalWithMovement.getMap()).thenReturn(map);
+        tondeuse.move(movement);
 
-        // then ...
-        Assert.assertEquals(tondeuse.getX(), X_POSITION);
-        Assert.assertEquals(tondeuse.getY(), Y_POSITION);
-    }
-
-    @Test(enabled = false, dataProvider = "movements")
-    public void should_move(CardinalPoint cp) {
-        when(field.isWithinBoundaries(any(int.class), any(int.class))).thenReturn(true);
-        tondeuse.updatePosition(cp);
-        Assert.assertNotEquals(tondeuse.getX(), X_POSITION);
-        Assert.assertNotEquals(tondeuse.getY(), Y_POSITION);
+        Assert.assertEquals(tondeuse.getDirection(), expectedDirection);
     }
 
     @DataProvider
     public Object[][] movements() {
         return new Object[][]{
-                {CardinalPoint.N},
-                {CardinalPoint.E},
-                {CardinalPoint.W},
-                {CardinalPoint.S},
+                {Movement.A, CardinalPoint.N},
+                {Movement.G, CardinalPoint.W},
         };
     }
 
-    @Test
-    public void should_only_move_inside_the_field() {
-
-    }
-
+    //TODO: Complete tests...
 }

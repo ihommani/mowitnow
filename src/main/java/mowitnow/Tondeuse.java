@@ -11,6 +11,8 @@ import org.springframework.stereotype.Component;
 
 /**
  * Classe représentant une tondeuse
+ *
+ * @author ihommani
  */
 @Component
 public class Tondeuse {
@@ -45,7 +47,7 @@ public class Tondeuse {
      *
      * @param direction {@link CardinalPoint}
      */
-    public void updatePosition(CardinalPoint direction) {
+    private void updatePosition(CardinalPoint direction) {
         if (direction == null) {
             return;
         }
@@ -81,7 +83,12 @@ public class Tondeuse {
         }
     }
 
-    public void updateDirection(CardinalPoint direction) {
+    /**
+     * Permet de mettre à jour la direction de la tondeuse
+     *
+     * @param direction
+     */
+    private void updateDirection(CardinalPoint direction) {
         if (direction == null) {
             return;
         }
@@ -108,6 +115,12 @@ public class Tondeuse {
         }
     }
 
+    /**
+     * Permet de 'bouger' la tondeuse. <br/>
+     * 'Bouger' signifie, faire une rotation ou avancer selon le mouvement que l'on donne en entrée.
+     *
+     * @param movement {@link Movement}
+     */
     public void move(Movement movement) {
 
         if (movement == null) {

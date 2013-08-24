@@ -1,12 +1,13 @@
 package mowitnow;
 
 import java.util.Map;
-import javax.annotation.Resource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import mowitnow.enums.CardinalPoint;
 import mowitnow.enums.Movement;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -19,10 +20,10 @@ public class Tondeuse {
 
     private static Logger LOGGER = LoggerFactory.getLogger(Tondeuse.class);
 
-    @Resource
+    @Autowired
     private Field field;
 
-    @Resource
+    @Autowired
     private CardinalWithMovement cardinalWithMovement;
 
     public Tondeuse(int x, int y, CardinalPoint direction) {

@@ -6,7 +6,8 @@
                         http://www.springframework.org/schema/context 
                         http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:component-scan base-package="com.ihommani" />
+	<context:component-scan base-package="mowitnow" />
+	<context:component-scan base-package="mowitnow.enums" />
 
 	<bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -19,7 +20,6 @@
 		<constructor-arg index="1" type="int"
 			value="${tondeuse1.starting.y}" />
 		<constructor-arg index="2" value="N" />
-		<property name="field" ref="field" />
 		<property name="cardinalWithMovement" ref="map" />
 	</bean>
 
@@ -29,7 +29,6 @@
 		<constructor-arg index="1" type="int"
 			value="${tondeuse2.starting.y}" />
 		<constructor-arg index="2" value="E" />
-		<property name="field" ref="field" />
 		<property name="cardinalWithMovement" ref="map" />
 	</bean>
 

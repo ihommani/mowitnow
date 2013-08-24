@@ -1,6 +1,7 @@
 package mowitnow;
 
-import org.testng.Assert;
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -16,8 +17,7 @@ public class FieldTest {
 
     @Test(dataProvider = "coordonates")
     public void should_tell_if_inside_the_field(int x, int y, boolean expected) {
-        Assert.assertEquals(field.isWithinBoundaries(x, y), expected);
-
+    	assertThat(field.isWithinBoundaries(x, y)).isEqualTo(expected);
     }
 
     @DataProvider
